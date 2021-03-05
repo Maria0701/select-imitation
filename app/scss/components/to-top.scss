@@ -1,0 +1,53 @@
+
+.to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 90px;
+    z-index: 4;
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background-color: $background-color;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transform: rotate(-90deg);
+
+    svg {
+        color: $text-color;
+        width: 32px;
+        height: 32px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: rgba($bg-top, 0.9);
+        svg {
+            color: $link-color;
+        }
+    }
+}
+
+.blue {
+    .to-top {  
+        &:hover,
+        &:focus {
+            background-color: rgba($bg-top2, 0.9);
+            svg {
+                color: $hover-color2;
+            }
+        }
+    } 
+}
+
+.green {
+    .to-top {  
+        &:hover,
+        &:focus {
+            background-color: rgba($bg-top3, 0.9);
+            
+            svg {
+                color: $hover-color3;
+            }
+        }
+    } 
+}

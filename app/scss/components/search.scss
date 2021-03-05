@@ -1,0 +1,182 @@
+.search {
+    position: relative;
+    display: flex;
+
+    &__form {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &__label {
+        display: flex;
+        flex-basis: 100%;
+        border: 1px solid $link-color;
+        overflow: hidden;
+    }
+
+    &__input {
+        flex-basis: 100%;
+        padding-left: 10px;
+        padding-right: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 2;
+        background-color: $background-color;
+        
+        border-radius: 0;
+        
+        &:hover,
+        &:focus,
+        &:focus-within {
+            outline-color: $link-color;
+            outline-width: 1px;
+        }
+    }
+
+    ::placeholder {
+        color: $placeholder-color;
+        font-family: inherit;
+        font-size: 8px;
+        color: $placeholder-color;
+    }
+
+    &__button {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 7px;
+        padding-left: 7px;
+        color: $background-color;
+        background-color: $link-color;
+        border: 0;
+        transition: background-color 0.3s ease-in-out;
+
+        svg {
+            display: block;
+            width: 22px;
+            height: 22px;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $link-color;
+        }
+    } 
+}
+
+@media (max-width: 360px) {
+    .search {
+        display: flex;
+        justify-content: flex-end;
+
+        &.oppened &__form{
+            display: block;
+        }
+
+        &__form {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 0;   
+            z-index: 2;         
+            padding: 10px;
+            width: 100%;
+            min-width: 250px;
+            background-color: $background-color;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+            border: 0;
+        }
+
+        &__toggler {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 7px;
+            padding-left: 7px;
+            color: $background-color;
+            background-color: $link-color;
+            border: 0;
+            transition: background-color 0.3s ease-in-out;
+
+            svg {
+                display: block;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover,
+            &:focus {                
+                outline-color: red;
+            }
+        } 
+
+        &__button {
+            top: 12px;
+            right: 12px;
+        }
+    }
+}
+
+@media (min-width: 361px) {
+    .search__toggler {
+        display: none;
+    }
+}
+
+.blue {
+    .search {
+       
+        &__label {
+            border: 1px solid $hover-color2;
+        }
+    
+        &__input {            
+            &:hover,
+            &:focus,
+            &:focus-within {
+                outline-color: $hover-color2;
+                outline-width: 1px;
+            }
+        }
+        
+        &__button {
+            color: $background-color;
+            background-color: $hover-color2;
+        
+            &:hover,
+            &:focus {
+                background-color: $hover-color2;
+            }
+        } 
+    }    
+}
+
+.green {
+    .search {       
+        &__label {
+            border: 1px solid $hover-color3;
+        }
+    
+        &__input {            
+            &:hover,
+            &:focus,
+            &:focus-within {
+                outline-color: $hover-color3;
+                outline-width: 1px;
+            }
+        }
+        
+        &__button {
+            color: $background-color;
+            background-color: $hover-color3;
+        
+            &:hover,
+            &:focus {
+                background-color: $hover-color3;
+            }
+        } 
+    }   
+}

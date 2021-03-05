@@ -1,0 +1,88 @@
+.advantages {
+    &__h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__ph {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 18px;
+        color: $text-color;
+        text-align: center;
+    }
+
+    &__text {
+        margin-top: 0;
+        margin-bottom: 34px;
+    }
+
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        flex-basis: 100%;
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        flex-basis: 100%;
+        margin-top: 0;
+        margin-bottom: 16px;
+        color: $text-color;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out,
+            text-decoration 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: $link-color;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+
+    &__img {
+        margin-bottom: 16px;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (min-width: $tablet) {
+    .advantages {
+        &__item {
+            flex-basis: calc(50% - 12px);
+
+            &:last-child {
+                flex-grow: 1;
+            }            
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .advantages {
+        &__item {
+            flex-basis: calc(100% / 3 - 16px);
+            margin-right: 24px;
+            flex-grow: 1;
+
+            &:nth-child(3n),
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

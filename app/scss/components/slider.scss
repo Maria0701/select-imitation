@@ -1,0 +1,117 @@
+@media (max-width: $small-screen) {
+    .slider {
+        display: none;
+    }
+}
+
+@media (min-width: $small-screen) {
+    @keyframes animation-slides {
+        0% {
+            opacity:0;
+        }
+        50% {
+            opacity:50%;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+    .slider {
+        position: relative;
+        min-height: 100%;
+
+        &__wrapper {
+            display: flex;
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        &__list {
+            display: flex;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        &__item {
+            position: relative;
+            flex-shrink: 0;
+            flex-basis: 100%;
+            padding-top: 39%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            &--active {
+                animation-name: animation-slides;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-delay: 0;
+            }      
+        }
+
+        &__text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 24px;
+            text-decoration: none;     
+        }
+        
+        &__text-inside {
+            display: block;
+            padding-right: 16px;
+            padding-left: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            color: $background-color;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: $link-color;
+        }
+
+        &__header {
+            display: block;
+        }
+
+        &__arrow {
+            position: absolute;
+            top: 24px;
+            width: 48px;
+            height: 48px;
+            color: $background-color;
+            border: 1px;
+            background-color: transparent;
+            transition: color 0.3s ease-in-out;
+            cursor: pointer;
+
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            &:hover,
+            &:focus {
+                outline: 0;
+                color: $link-color;
+            }
+        }
+
+        &__arrow--left {
+            transform: scale(-1,1);
+            right: 56px;
+        }
+
+        &__arrow--right {
+            right: 24px;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.footer {    
+    padding-top: 24px;
+    padding-bottom: 24px;;
+    line-height: 2;
+    background-color: $footer-color;
+    color: #ffffff;
+
+    &__wrapper {
+        @include container;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__block {
+        &--policy{
+            padding-top: 24px;
+            color: $background-color;
+            max-width: 100%;
+
+            div {
+                display: flex;
+                align-items: flex-start;
+            }
+            
+            a {
+                padding-left: 8px;
+                color: $link-color;
+                text-decoration: underline;
+                text-underline-position: under;
+                hyphens: auto;            
+            } 
+            
+            p {
+                margin-top: 0;
+                margin-bottom: 0;
+                hyphens: auto;
+            }
+        }
+
+        
+    }
+
+    &__checkbox {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        opacity: 0;
+
+        &:checked ~ .footer__checkbox-span {
+            background: $background-color;
+            background-image: url('/img/internal/tick.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:hover ~ .footer__checkbox-span,
+        &:focus ~ .footer__checkbox-span {
+            border-color: $link-color;
+        }
+    }
+    
+    &__checkbox-label { 
+        position: relative;
+        display: inline-block;
+        padding-top: 8px;
+    }
+    
+    &__checkbox-span {
+        display: block;
+        align-self: center;     
+        width: 18px;
+        height: 18px; 
+        margin-right: 8px;;        
+        background: $background-color;
+        border: 2px solid $background-color;                
+    }
+}
+
+@media (min-width: $tablet) {
+    .footer {
+        &__block {
+            flex-basis: calc(50% - 12px);
+
+            &--policy{
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .footer {
+        padding-top: 60px;
+    }
+}
+
+.green {
+    .footer {    
+        background-color: $footer-color3;
+        color: #ffffff;
+    }
+}
+
+
+.blue {
+    .footer {    
+        background-color: $footer-color2;
+        color: #ffffff;
+    }
+}

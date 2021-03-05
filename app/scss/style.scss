@@ -1,0 +1,39 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+[data-selector="selector"] {
+    position: relative;
+}
+
+[data-selector="selector"] option {
+    z-index: 0;
+}
+
+[data-selector="search"] {
+    width: 100%;
+    min-width: 200px;
+}
+
+[data-selector="list"] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    flex-wrap: wrap;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    visibility: hidden;
+    background-color: white;
+}
+
+.select__list label{
+    flex-basis: 100%;
+}
+
+.select__list input {
+    opacity: 0;
+}

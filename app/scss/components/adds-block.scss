@@ -1,0 +1,24 @@
+.adds-block {
+    flex-basis: 100%;
+    padding: 15px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0,0,0,0.8);
+
+    &__ph {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__link {
+        display: block;
+        color: $link-color;
+        transition: text-decoration 0.3s ease-in-out;
+
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+}

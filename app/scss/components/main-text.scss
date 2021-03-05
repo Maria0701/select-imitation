@@ -1,0 +1,10 @@
+@media (max-width: 749px){
+    .main-text {
+        display: none;
+    }
+}
+
+@media (min-width: $tablet) {
+    .main-text {
+    }
+}

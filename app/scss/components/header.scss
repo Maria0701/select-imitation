@@ -1,0 +1,140 @@
+.header {
+    background-color: #ccc;
+
+    &__wrapper {
+        @include container;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__top {
+        padding-top: 8px;
+        
+    }
+
+    &__top &__wrapper {
+        padding-bottom: 4px; 
+        border-bottom: 1px solid rgba($background-color, 0.5);       
+    }
+
+    &__bottom {
+        padding-top: 16px;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: $small-screen) {
+    .header {
+        &__search {
+            flex-basis: calc(100% / 3);
+            flex-grow: 1;
+            margin-right: 10px;         
+        }
+
+        &__bottom {
+            justify-content: space-between;
+            padding-left: 46px;     
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .header {
+        &__time {
+            display: none;
+        }
+    }
+}
+
+
+@media (min-width: $tablet) {
+    .header {
+        &__time {
+            color: $text-color;
+            display: flex;
+            font-size: 12px;
+
+            span:first-child {
+                margin-right: 8px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .header {
+        background-color: $background-color;
+
+        &__top &__wrapper {
+            padding-bottom: 4px; 
+            border-bottom: 1px solid rgba($top-color, 0.2);       
+        }
+
+        &__bottom {
+            padding-top: 24px;
+            padding-bottom: 32px;
+        }
+        
+        &__search {
+            flex-grow: 1;
+            margin-right: 24px;
+        }
+    }
+}
+
+.blue {
+    .header {
+        background-color: $bg-top2;
+       
+        &__top &__wrapper {
+            padding-bottom: 4px; 
+            border-bottom: 1px solid rgba($background-color, 0.5);       
+        }
+    }
+    
+    @media (min-width: $small-screen) {
+        .header {
+            background-color: $background-color;
+    
+            &__top &__wrapper {
+                border-bottom: 1px solid rgba($top-color, 0.2);       
+            }
+        }
+    }
+
+    @media (max-width: $small-screen) {
+        .header__time {
+            color: $background-color;
+        }
+    }
+}
+
+.green {
+    .header {
+        background-color: $bg-top3;
+       
+        &__top &__wrapper {
+            padding-bottom: 4px; 
+            border-bottom: 1px solid rgba($background-color, 0.5);       
+        }
+    }
+
+    @media (max-width: $small-screen) {
+        .header__time {
+            color: $background-color;
+        }
+    }
+    
+    @media (min-width: $small-screen) {
+        .header {
+            background-color: $background-color;
+    
+            &__top &__wrapper {
+                border-bottom: 1px solid rgba($top-color, 0.2);       
+            }
+        }
+    }
+}

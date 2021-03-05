@@ -1,0 +1,46 @@
+@mixin fontface($family, $localname, $filename, $weight, $style) {
+    @font-face {
+        font-display: swap;
+        font-family: $family;
+        src: local('#{$localname}'),
+        url('../fonts/#{$filename}.woff') format('woff');;
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+@include fontface('PT Sans', 'PtSans', PTSansRegular, 400, normal);
+@include fontface('PT Sans', 'PtSans', PTSansBold, 600, normal);
+@include fontface('PT Sans', 'PtSans', PTSansItalic, 400, italic);
+
+@mixin visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@mixin container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+
+    @media (min-width: $tablet) {
+    }
+
+    @media (min-width: $small-screen) {
+    }
+
+    @media (min-width: $large-screen) {
+        max-width: $large-screen;
+    }
+}
+

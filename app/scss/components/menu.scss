@@ -1,0 +1,212 @@
+.main-menu {
+    position: relative;
+    display: flex;
+    margin-bottom: 36px;
+    background-color: $bg-top;
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__link {
+        display: block;
+        color: $background-color;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 2.2;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover,
+        &:focus,
+        &--active {
+            background-color: $link-color;
+        }
+    }
+}
+
+@media (max-width: $small-screen) {
+    .main-menu {
+        &__wrapper {
+            display: none;
+            z-index: 1;
+            background-color: $bg-top;
+        }
+
+        &__opener {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: -64px;
+            left: 20px;
+            width: 40px;
+            height: 40px;            
+        }
+
+        &__bar::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 16px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            margin-bottom: 3px;
+            background-color: $background-color; 
+        } 
+        
+        &__bar::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: $background-color; 
+        }     
+
+        &__bar {
+            position: absolute;
+            display: block;
+            top: 10px;                
+            width: 30px;
+            height: 2px;
+            background-color: $background-color;            
+        }
+
+        
+        &.oppened &__wrapper {
+            position: absolute;            
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+        }
+     
+        &__item {
+            &:not(:last-child) .main-menu__link {
+                border-bottom: 1px solid rgba($background-color, 0.5);
+            }
+
+            &:first-child .main-menu__link {
+                padding-top: 5px;
+            }
+
+            &:last-child .main-menu__link {
+                padding-bottom: 5px;
+            }
+        }
+
+        &__opener {
+            z-index: 3;
+            outline: 0;
+
+            &:hover,
+            &:focus {
+                .main-menu__bar,
+                .main-menu__bar::after,
+                .main-menu__bar::before {
+                    background-color: $link-color;
+                }
+            }
+        }
+
+        &.oppened &__bar {
+            top: 20px;
+            left: 5px;
+            position:absolute;
+            transform: rotate(45deg);
+            
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                top: 0;
+                transform: rotate(275deg);
+            }
+        }
+    }
+}
+
+@media (min-width: $small-screen) {
+    .main-menu {
+        &__wrapper {
+            @include container;
+            width: 100%;
+        }
+        
+        &__opener {
+            display: none;
+        }
+
+        &__list {
+            display: flex;
+        }
+
+        &__link {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        &__item {
+            flex-grow: 1;
+        }
+
+        &__wrapper > &__list > &__item:not(:last-child) {
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                display: block;
+                width: 1px;
+                height: 80%;
+                background-color: rgba($background-color, 0.2);
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+
+.blue {
+    .main-menu {
+        background-color: $bg-top2;
+    
+        &__link {
+    
+            &:hover,
+            &:focus,
+            &--active {
+                background-color: $hover-color2;
+            }
+        }
+    }
+}
+
+.green {
+    .main-menu {
+        background-color: $bg-top3;
+    
+        &__link {
+    
+            &:hover,
+            &:focus,
+            &--active {
+                background-color: $hover-color3;
+            }
+        }
+    }
+}
